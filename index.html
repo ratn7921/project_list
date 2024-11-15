@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
+    <!-- Remixicon CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
     <style>
-        /* Basic reset and body styles */
+        /* Basic Reset */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
+        /* Global Body Styles */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f9fc;
@@ -20,24 +23,24 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             padding: 20px;
+            margin: 0;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Container for overall content */
+        /* Container Styling */
         .container {
-            width: 100%;
             max-width: 900px;
-            text-align: center;
-            padding: 30px;
+            width: 100%;
             background-color: #ffffff;
+            padding: 30px;
+            text-align: center;
             border-radius: 10px;
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
         }
 
-        /* Page title styling */
+        /* Heading Styling */
         h1 {
             font-size: 2.8rem;
             color: #2c3e50;
@@ -45,7 +48,7 @@
             font-weight: bold;
         }
 
-        /* Dark mode styling */
+        /* Dark Mode Styles */
         body.dark-mode {
             background-color: #2c3e50;
             color: #ecf0f1;
@@ -56,17 +59,17 @@
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Dark mode button styling */
+        /* Dark Mode Button */
         .dark-mode-btn {
             position: absolute;
             top: 20px;
             right: 20px;
-            padding: 10px;
             background-color: #3498db;
             color: #fff;
             border: none;
             border-radius: 50%;
             cursor: pointer;
+            padding: 10px;
             font-size: 1.5rem;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease;
@@ -76,40 +79,35 @@
             background-color: #2980b9;
         }
 
-        /* Styling for the project list */
+        /* Project List Styles */
         .project-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
+            list-style: none;
+            padding: 0;
         }
 
-        /* Styling for individual project items */
+        /* Project Item Styles */
         .project-list li {
-            background: #ffffff;
+            background-color: #ffffff;
             border-radius: 12px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Dark mode styling for project items */
         .dark-mode .project-list li {
-            background: #34495e;
+            background-color: #34495e;
             box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
         }
 
-        /* Hover effect for project items */
         .project-list li:hover {
             transform: translateY(-10px);
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        /* Styling for project links */
+        /* Project Link Styles */
         .project-link {
             display: flex;
             align-items: center;
@@ -120,70 +118,64 @@
             transition: color 0.3s ease;
         }
 
-        /* Dark mode styling for links */
         .dark-mode .project-link {
             color: #ecf0f1;
         }
 
         .project-link i {
-            color: #3498db;
-            font-size: 1.5rem;
             margin-right: 12px;
+            font-size: 1.5rem;
+            color: #3498db;
         }
 
-        /* Hover effect for links */
         .project-link:hover {
             color: #2980b9;
         }
 
-        /* Styling for the overview text */
+        /* Project Overview */
         .project-overview {
             display: none;
-            background: #ecf6fd;
-            color: #555;
-            border-radius: 8px;
             padding: 15px;
             margin-top: 20px;
             font-size: 1rem;
-            line-height: 1.6;
+            background-color: #ecf6fd;
+            color: #555;
+            border-radius: 8px;
             box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.05);
             opacity: 0;
             max-height: 0;
-            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
         }
 
-        /* Dark mode styling for the overview text */
         .dark-mode .project-overview {
-            background: #34495e;
+            background-color: #34495e;
             color: #ecf0f1;
         }
 
-        /* Show project overview on hover */
         .project-list li:hover .project-overview {
             display: block;
             opacity: 1;
             max-height: 200px;
         }
-        
-        /* Button to see more */
+
+        /* 'See More' Button */
         .see-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
             background-color: #3498db;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 15px;
-            display: inline-block;
+            border-radius: 8px;
             transition: background-color 0.3s ease;
         }
 
-        /* Hover effect for 'See More' button */
         .see-more:hover {
             background-color: #2980b9;
         }
 
-        /* Responsive layout */
+        /* Responsive Styles */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
@@ -208,38 +200,22 @@
 </head>
 <body>
 
+<!-- Dark Mode Toggle Button -->
 <button class="dark-mode-btn" id="darkModeBtn">
     <i class="ri-moon-line"></i>
 </button>
 
+<!-- Main Content -->
 <div class="container">
     <h1>My Projects</h1>
     <ul class="project-list">
         <li>
-            <a href="https://modern-web-development-html-css-js.vercel.app/" class="project-link" target="_blank">
-                <i class="ri-folder-line"></i> Web Dev Mastery
+            <a href="#" class="project-link" target="_blank">
+                <i class="ri-folder-line"></i> Project Name
             </a>
             <div class="project-overview">
-                <p>This project demonstrates my skills in modern web development using HTML, CSS, and JavaScript. It features a fully responsive design and showcases various web design principles.</p>
-                <a href="https://modern-web-development-html-css-js.vercel.app/" class="see-more" target="_blank">See More</a>
-            </div>
-        </li>
-        <li>
-            <a href="https://work-oc1bvg6t1-ratn7921s-projects.vercel.app/">
-                <i class="ri-folder-line"></i> Interactive Dashboard
-            </a>
-            <div class="project-overview">
-                <p>An interactive dashboard application with real-time data integration, perfect for showcasing my skills in JavaScript and API usage.</p>
-                <a href="https://work-oc1bvg6t1-ratn7921s-projects.vercel.app/">See More</a>
-            </div>
-        </li>
-        <li>
-            <a href="https://threejs-spear-u8hs.vercel.app/">
-                <i class="ri-folder-line"></i> 3D Graphics App
-            </a>
-            <div class="project-overview">
-                <p>This project focuses on creating 3D objects using Three.js. It demonstrates the power of WebGL for creating interactive 3D graphics in the browser.</p>
-                <a href="https://threejs-spear-u8hs.vercel.app/">See More</a>
+                <p>Project description goes here.</p>
+                <a href="#" class="see-more" target="_blank">See More</a>
             </div>
         </li>
         <!-- Add more projects as needed -->
@@ -247,7 +223,7 @@
 </div>
 
 <script>
-    // Dark Mode Toggle Functionality
+    // Toggle Dark Mode
     const darkModeBtn = document.getElementById('darkModeBtn');
     darkModeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
